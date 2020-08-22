@@ -14,7 +14,7 @@ if checkpoint.ok:
     loader = data.Data(args)
 
     my_model = model.Model(args, checkpoint)
-    my_model.model.load_state_dict(torch.load('./pretrained/model_149.pt'))
+    my_model.model.load_state_dict(torch.load('./pretrained/model_s1.pt'))
 
     args.model = 'RECOMPOSE'
     my_recomp = model.Model(args, checkpoint)
