@@ -25,6 +25,8 @@ year = {2020}
 
 1. Clone this repo
 2. Install PyTorch and dependencies from http://pytorch.org 
+3. For stage II training, you need to download https://download.pytorch.org/models/vgg16-397923af.pth and put it in 
+4. For testing, you can directly run test.sh in 
 
 （**Note**: the code is suitable for PyTorch 0.4.1）
 
