@@ -27,6 +27,8 @@ year = {2020}
 2. Install PyTorch and dependencies from http://pytorch.org 
 3. For stage II training, you need to download https://download.pytorch.org/models/vgg16-397923af.pth and put it in DRBL-stage2/src/.
 4. For testing, you can directly run test.sh in DRBL-stage1/src/ and DRBL-stage2/src/.
+5. For training, you can directly run train.sh in DRBL-stage1/src/ and DRBL-stage2/src/.
+6. You can download our dataset here: .
 
 （**Note**: the code is suitable for PyTorch 0.4.1）
 
