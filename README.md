@@ -28,10 +28,59 @@ year = {2020}
 3. For stage II training, you need to download https://download.pytorch.org/models/vgg16-397923af.pth and put it in DRBL-stage2/src/.
 4. For testing, you can directly run test.sh in DRBL-stage1/src/ and DRBL-stage2/src/.
 5. For training, you can directly run train.sh in DRBL-stage1/src/ and DRBL-stage2/src/.
-6. You can download our dataset here: https://pan.baidu.com/s/1-j6_3G9WHS8rkEBzHN7QvQ (extracted code: r0xd)
+6. You can download our dataset here: https://pan.baidu.com/s/149C65GCvg4lVKLDQqFdvqw (extracted code: 22im) [Partly updated on 27 March]
 
 （**Note**: the code is suitable for PyTorch 0.4.1）
+
+## Detailed Guidance:
+
+Thank you for your attention and sorry for that I did not well treat you. It will change and you can obtain a timely response now.
+
+1. How could I reproduce the objective evaluation results in Table I in the paper？
+You can run sh ./DRBL-stage1/src/test.sh
+The 1st stage offers better objective results while the other produces better overall subjective visual quality.
+In our paper, the methods involved in objective comparisons are not trained with adversarial/quality losses.
+
+2. Data structure
+You can see src\data\lowlight.py and src\data\lowlighttest.py for those details in the code of each stage.
+
+In the 1st stage:
+hr --> normal-light images, lr --> low-light images
+lr and hr are paired.
+
+In the 2nd stage:
+hr --> normal-light images, lr --> low-light images
+lr and hr are paired.
+lrr --> low-light images in the real applications, hq --> high quality dataset
+
+3. Dataset
+You can obtain the dataset via: https://pan.baidu.com/s/149C65GCvg4lVKLDQqFdvqw (extracted code: 22im) [Partly updated on 27 March]
+
+We introduce these collections here:
+1) Our_low: real captured low-light images in LOL for training;
+2) Our_normal: real captured normal-light images in LOL for training;
+3) Our_low_test: real captured low-light images in LOL for testing;
+4) Our_normal_test: real captured normal-light images in LOL for testing;
+5) AVA_good_2: the high-quality images selected from the AVA dataset based on the MOS values
+6) Low_real_test_2_rs: real low-light images selected from LIME, NPE, VV, DICM, the typical unpaired low-light testing datasets.
+7) Low_degraded: synthetic low-light images in LOL for training;
+7) Normal: synthetic normal-light images in LOL for training;
+
+4. Image number in LOL
+LOL: Chen Wei, Wenjing Wang, Wenhan Yang, and Jiaying Liu. "Deep Retinex Decomposition for Low-Light Enhancement", BMVC, 2018.
+LOL-v2 (the extension work): Wenhan Yang, Haofeng Huang, Wenjing Wang, Shiqi Wang, and Jiaying Liu. "Sparse Gradient Regularized Deep Retinex Network for Robust Low-Light Image Enhancement", TIP, 2021.
+
+We use LOL-v2. In fact, it is quite unexpected and frustrated that the work of LOL-v2 is published later than this, which might also bother follower.
+I think you can choose which one to follow freely.
+
+5. Pytorch version
+Only 0.4 and 0.41. If you have to use more advanced versions, which might be constrained to the GPU device types, you might access this companion for the idea to replace parts of the dataloader: 
+
+6. Why does stage 2 have two branches?
+The distributions of LOL and LIME, NPE, VV, DICM are quite different.
+We empirically found that it will lead to better performance if two models and the corresponding training data are adopted.
 
 ## Contact
 
 If you have questions, you can contact `yangwenhan@pku.edu.cn`.
+A timely response is promised, if the email is sent by your affliaton email with your signed name.
