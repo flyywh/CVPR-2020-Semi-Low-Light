@@ -28,7 +28,7 @@ year = {2020}
 3. For stage II training, you need to download [[VGG16 Model]](https://download.pytorch.org/models/vgg16-397923af.pth) and put it in DRBL-stage2/src/.
 4. For testing, you can directly run test.sh in DRBL-stage1/src/ and DRBL-stage2/src/.
 5. For training, you can directly run train.sh in DRBL-stage1/src/ and DRBL-stage2/src/.
-6. You can download our dataset here: [[Dataset Link]](https://pan.baidu.com/s/149C65GCvg4lVKLDQqFdvqw) (extracted code: 22im) [Partly updated on 27 March]
+6. You can download our dataset here: [[Dataset Link]](https://pan.baidu.com/s/1MNVwBVZI1ASglJwoZqj8MQ) (extracted code: odwa) [Updated on 25 April, 2022]
 
 （**Note**: the code is suitable for PyTorch 0.4.1）
 
@@ -52,7 +52,7 @@ lr and hr are paired. <br>
 lrr --> low-light images in the real applications, hq --> high quality dataset <br>
 
 3. Dataset
-You can obtain the dataset via: [[Dataset Link]](https://pan.baidu.com/s/149C65GCvg4lVKLDQqFdvqw) (extracted code: 22im) [Partly updated on 27 March] <br>
+You can obtain the dataset via: [[Dataset Link]](https://pan.baidu.com/s/1MNVwBVZI1ASglJwoZqj8MQ) (extracted code: odwa) [Updated on 25 April, 2022] <br>
 We introduce these collections here: <br>
 a) Our_low: real captured low-light images in LOL for training; <br>
 b) Our_normal: real captured normal-light images in LOL for training; <br>
